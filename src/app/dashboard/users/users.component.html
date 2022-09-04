@@ -1,0 +1,20 @@
+<div class="container-fluid mt-2">
+  <div class="row mt-2 mb-2">
+    <div class="col-md-3">
+      <select class="form-select" #sortBy aria-label="sortBy" (change)="getDataSorted(sortBy.value)">
+        <option selected disabled value="">Sort By</option>
+        <option value="0">Name</option>
+        <option value="1">Total Impressions</option>
+        <option value="2">Total Conversions</option>
+        <option value="3">Total Revenue</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let user of this.users">
+      <div class="col-md-4">
+        <app-user [user]="user"></app-user>
+      </div>
+    </ng-container>
+  </div>
+</div>
